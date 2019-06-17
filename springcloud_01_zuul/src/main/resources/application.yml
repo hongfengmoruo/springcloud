@@ -1,0 +1,11 @@
+server:
+  port: 8900
+  
+spring:  application:    name: spring-cloud-zuul
+    
+eureka:  client:    service-url:      defaultZone: http://localhost:8061/eureka/,http://localhost:8062/eureka/ 
+      
+zuul:  routes:    dept:                                         #自定义模块的名称
+      service-id: springcloud-01-dept-provider    #服务的名字      path: /service-a/**                       #服务别名
+    emp:
+      service-id: springcloud-01-emp-provider      path: /service-b/**     
